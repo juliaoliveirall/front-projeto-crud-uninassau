@@ -1,14 +1,17 @@
 "use client"
 import React from "react";
+import { useRouter } from 'next/router';
 import { InputText } from "./textInput";
 import { Button } from "./button";
 
 export function LoginRegister(){
     function handleClick(event: React.FormEvent){
+        const router = useRouter();
         event.preventDefault();
 
         const user = document.getElementById("Usuario") as HTMLInputElement;
         const senha = document.getElementById("Senha")  as HTMLInputElement;
+
 
         if (user.value !== "secretaria") {
             alert("Digite um nome de usuário válido");
@@ -20,12 +23,13 @@ export function LoginRegister(){
             return;
         }
         
-        alert("Login bem-sucedido")
+        alert("Login bem-sucedido");
+        router.push('/cadastrar')
     }
     return(
         <div className="bg-box w-96 mt-20 mx-auto p-3 text-center rounded-2xl">
             <h1 className="text-3xl font-bold p-3">Realizar login</h1>
-            <form action="pages/cadastar" id="register" method="post" onSubmit={handleClick} >
+            <form action="pages/cadastrar" id="register" method="post" onSubmit={handleClick} >
                 <InputText inputId="Usuario" labelText="Digite o nome de usuário"/>
                 <InputText inputId="Senha" labelText="Digite a senha"/>
                 <Button buttonText="Entrar" type="submit"/>
