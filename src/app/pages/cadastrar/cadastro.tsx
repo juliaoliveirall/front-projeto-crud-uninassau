@@ -29,7 +29,7 @@ export function Cadastro() {
     return (
         <div className="bg-box dark:bg-boxd w-96 mt-20 mx-auto p-6 text-center rounded-2xl">
             <h1 className="text-3xl font-bold p-3">Cadastro de Aluno</h1>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} action="dados">
                 <div className="mb-4">
                     <label htmlFor="nome" className="block text-left">Nome:</label>
                     <input
@@ -69,16 +69,4 @@ export function Cadastro() {
     );
 }
 
-export function DadosAluno() {
-    const aluno = JSON.parse(localStorage.getItem('aluno') || '{}');
-
-    return (
-        <div className="mt-10 text-center">
-            <h2 className="text-2xl font-bold">Dados Cadastrados</h2>
-            <p><strong>Nome:</strong> {aluno.nome}</p>
-            <p><strong>Email:</strong> {aluno.email}</p>
-            <p><strong>CPF:</strong> {aluno.cpf}</p>
-        </div>
-    );
-}
 

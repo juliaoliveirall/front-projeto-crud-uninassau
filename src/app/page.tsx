@@ -9,5 +9,6 @@ export default function Home() {
       <LoginRegister />
       <Footer />
     </div>
+   
   );
 }

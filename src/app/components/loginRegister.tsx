@@ -1,12 +1,10 @@
 "use client"
 import React from "react";
-import { useRouter } from 'next/router';
 import { InputText } from "./textInput";
 import { Button } from "./button";
 
 export function LoginRegister(){
     function handleClick(event: React.FormEvent){
-        const router = useRouter();
         event.preventDefault();
 
         const user = document.getElementById("Usuario") as HTMLInputElement;
@@ -24,7 +22,6 @@ export function LoginRegister(){
         }
         
         alert("Login bem-sucedido");
-        router.push('/cadastrar')
     }
     return(
         <div className="bg-box w-96 mt-20 mx-auto p-3 text-center rounded-2xl">
